@@ -1,1 +1,1 @@
-web: gunicorn crio_xmeme.wsgi --log-file -
+web: gunicorn memev2.wsgi --log-file -
