@@ -1,7 +1,9 @@
 from django import forms
-from . models import Meme
 
-# forms page to serialize the data from the db
+from .models import Meme
+
+
+# FORM TO GET DATA FROM THE USER AND UPLOAD IT
 class memesForm(forms.ModelForm):
     class Meta:
         model = Meme

@@ -1,6 +1,6 @@
 {% extends "meme_app/layout.html" %} {% block content %}
 
-<!-- page to list all the memes after you added or removed any memes. -->
+<!-- PAGE WHICH LISTS ALL THE MEMES -->
 
 <!--Make it bordered  -->
 <table class="table table-bordered table-dark">
@@ -19,17 +19,13 @@
 
         {% for m in memes_List %}
         <td>
-            <!-- delete id when deploying -->
-            <!-- <tr>
-                <h5>id:{{m.id}} &nbsp;</h5>                 
-            </tr> -->
             <tr>
                 <h2>{{m.id}}.{{m.caption}} &nbsp;  </h2>
             </tr>
             <tr>
                 <h5>posted by:{{m.name}}&nbsp;</h5>
             </tr>
-            <img src="{{m.url}}" style="width: 350px; height: 200px; margin-bottom: 45px" />
+            <img src="{{m.url}}" style="width: 400px; height: 300px; margin-bottom: 45px" />
             <tr>
                 <a href="{% url 'memes_update' m.id %}" class="btn text secondary px-0">
                     <i class="far fa-edit fa-lg" style="margin-left: 260px; "></i>

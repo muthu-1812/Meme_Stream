@@ -14,7 +14,11 @@ from pathlib import Path
 import django_heroku
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent               #uncomment this prolly
+
+#this work fine for deployment as well
+BASE_DIR = Path(__file__).resolve().parent.parent              
+
+
 
 # use below one for deployment
 # BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -33,7 +37,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -49,10 +53,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'meme_app',                      #should i have something like meme_app.apps.ApiConfig
+    'meme_app',                      
     'rest_framework',
     'crispy_forms',
     'rest_framework_swagger',
+    'drf_yasg',
    
 ]
 
@@ -155,6 +160,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
+
+
+# run this everytime you make chnages to static files
+# py manage.py collectstatic  
 
 STATIC_URL = '/static/'
 

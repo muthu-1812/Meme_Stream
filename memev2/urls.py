@@ -22,21 +22,39 @@ Including another URLconf
 # from django.contrib import admin
 # from django.conf.urls import url
 
-#this enough remove top
 from django.contrib import admin
-from django.urls import path, include
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.urls import include, path
+from drf_yasg import openapi
+from drf_yasg.views import get_schema_view
 from rest_framework import permissions
+# from memev2.meme_front.views import Index
+from django.views.generic import TemplateView
+from rest_framework.documentation import include_docs_urls
+from rest_framework_swagger.views import get_swagger_view
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-# from memev2.meme_front.views import Index
+
+schema_view = get_schema_view(
+   openapi.Info(
+      title="X-Memes API",
+      default_version='v6',
+      description="The Meme Stream",
+   ),
+   public=True,
+   permission_classes=(permissions.AllowAny,),
+)
+
+
+
 
 urlpatterns = [
-    # path('', Index.as_view(), name='index'),
     path('admin/', admin.site.urls),
-    path('',include('meme_app.urls')),          #change it to memes
-    # path('',include('frontend.urls')),           #should i chenge this
-    # path('', views.Index.as_view(), name='index')
+
+    path('',include('meme_app.urls')),          #TO INCLUE ALL URLS FROM THE APP MEME_APP
+   
+    path('swagger-ui/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'), #for the swagger ui
+  
 ]
 
 urlpatterns += staticfiles_urlpatterns()

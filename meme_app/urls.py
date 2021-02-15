@@ -1,7 +1,8 @@
-from django.urls import path, include
-from .views import MemeAPIView, MemeUpdateAPIView
-from . import views
 from django.contrib import admin
+from django.urls import include, path
+
+from . import views
+from .views import MemeAPIView, MemeUpdateAPIView
 
 urlpatterns=[
     # path('mm',views.Meme_overview,name="api-overview"),
@@ -19,30 +20,30 @@ urlpatterns=[
 
     # path('admin/', admin.site.urls), #admin/ is for admin portal 
 
-
+    #API ENDPOINT TO GET 100 MEMES AND TO POST A MEME AS WELL
     path('memes/',  MemeAPIView.as_view(), name='memes_api_list'), # api/memes - endpoint for getting and posting meme content
     
-    
+    #PATCH API ENDPOINT TO UPDATE
     path('memes/<int:id>/',MemeUpdateAPIView.as_view(),name='memes_api_id'),
 
-     # get and post req. for insert operation.
+    # URL FOR THE FORM TO UPLOAD A MEME
     path('memes-form/', views.memes_form, name='memes_insert'),         
     
-    # get and post req. for update operation.
+    #THE FORM TO SEND DATE TO UPDATE A MEME
     path('memes-update/<int:id>/', views.memes_form, name='memes_update'),
 
 
-    #extra url for hmepage remove after setting up homepage
+    #HOMEPAGE URL WHICH DISPLAYS MEMES FOR NOW
     path('', views.memes_List, name='memes_List'), 
 
-    # get req. to retrieve and display all records.
+    # THE FRONTEND URL WHICH DISPLAYS THE MEMES
     path('memes-list/', views.memes_List, name='memes_List'), 
 
-    # to get the desired id field.
+    # ENDPOINT TO GET THE DETAILED VIEW OF EACH MEME
     path('memes-list/<int:id>/', views.memes_json, name='meme_json'),    
     
-    # post req. to delete a meme using it's id
-    # DISABLED FOR NOW
+    
+    # ENDPOINT TO DELETE A MEME
     path('delete/<int:id>/',views.memes_delete,name='memes_delete')
 
 
