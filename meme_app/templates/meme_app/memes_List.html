@@ -3,11 +3,11 @@
 <!-- PAGE WHICH LISTS ALL THE MEMES -->
 
 <!--Make it bordered  -->
-<table class="table table-bordered table-dark">
+<table class="table table=borderless">
 
-    <thead class="border-bottom">
+    <thead class="thead-dark">
         <tr>
-            <a style="margin-left: 45em;" href="{% url 'memes_insert' %}" class="btn btn-outline-success">
+            <a style="margin-left: 45em;" href="{% url 'memes_insert' %}" class="btn btn-dark">
 
                 <i class="fas fa-plus">Add Memes</i>
 
@@ -19,6 +19,7 @@
 
         {% for m in memes_List %}
         <td>
+            <div class="alert alert-dark" role="alert">
             <tr>
                 <h2>{{m.id}}.{{m.caption}} &nbsp;  </h2>
             </tr>
@@ -35,14 +36,12 @@
                     <button type="submit" class="btn">
                         <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
                     </button>
-
                 </form>
             </tr>
-
+            </div>>
         </td>
         {% endfor %}
     </tbody>
-
 </table>
 
 {% endblock content %}
