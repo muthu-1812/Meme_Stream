@@ -19,6 +19,8 @@ Please make sure to start the server with debug mode=False
 
 
 TODOS
+
+make both memes and memes\ hit the endpoint
 snazz up the ui find its source as well make it different
 make the ui part hit the apis instead
 separate deployment of frontend and backend
