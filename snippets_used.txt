@@ -1,0 +1,74 @@
+For Python 3.3 or newer, Commands for installing, creating and activate virtual environment has been changed.
+
+You can install virtual environment using pip:
+
+py -m pip install --user virtualenv
+For creating new environment:
+
+python3 -m venv env
+To activate your virtual environment:
+
+.\myproject\Scripts\activate
+After activating virtual environment, You’ll see “(myproject)” next to the command prompt.
+
+
+
+
+.\scripts\activate go into the folder and run this 
+X-meme is a proper environment
+env\Scripts\activate
+
+
+django-admin startproject mytestsite   \\mytestsite name of project
+cd mytestsite
+
+
+python3 manage.py runserver
+
+
+to sart the server
+
+
+
+
+py manage.py sqlmigrate polls 0001 what does this do
+
+
+
+
+emember the three-step guide to making model changes:
+
+Change your models (in models.py).
+Run python manage.py makemigrations to create migrations for those changes
+Run python manage.py migrate to apply those changes to the database.
+
+
+
+use timezone.localtime ()  instead of  timezone.now()
+
+
+# Lookup by a primary key is the most common case, so Django provides a
+# shortcut for primary-key exact lookups.
+# The following is identical to Question.objects.get(id=1).
+>>> Question.objects.get(pk=1)
+
+
+
+models la choice set eh illeya
+
+
+
+ The API automatically follows relationships as far as you need.
+# Use double underscores to separate relationships.
+# This works as many levels deep as you want; there's no limit.
+# Find all Choices for any question whose pub_date is in this year
+# (reusing the 'current_year' variable we created above).
+
+
+admin:home
+password:m
+
+curl --location --request PATCH 'http://127.0.0.1:8081/memes/2' --header 'Content-Type:application/json' --data-raw "{"url": "new_url","caption": "new_caption"}"
+
+#working post request
+ curl -X POST -H "Content-Type: application/json"  -d '{ "name": "Muthu-postman2","url": "https://imgur.com/gallery/sZPbqny","caption": "first post(updated)"}' http://0.0.0.0:80801/memes/

@@ -1,0 +1,36 @@
+{% extends "meme_app/layout.html" %} {% load crispy_forms_tags %} {% block content %}
+
+<!--  page to dispplay the json format of the memes for a particular id  -->
+<!-- Append meme id in url to see the detailed view of a Specific meme -->
+<div class="mw6 center pa3 sans-serif">
+
+    {% for m in meme_list %}
+
+    <div class="pa2 mb3 striped--near-white">
+
+        <div class="pl2">
+
+            <p class="mb2"><b>Id:</b>{{ m.id }}</p>
+
+            <p class="mb2"><b>Name:</b>{{ m.name }}</p>
+
+            <p class="mb2"><b>Caption:</b>{{ m.caption }}</p>
+
+            <p><b>Image:</b><br>
+            <img src="{{m.url}}" style="width: 250px; height: 250px; margin-bottom: 50px" />
+            </p>
+
+            
+
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+
+
+{% endblock content %}

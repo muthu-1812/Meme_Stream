@@ -1,0 +1,16 @@
+INFO:root:GetOnEmptyDbTest
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8081
+DEBUG:urllib3.connectionpool:http://localhost:8081 "GET /memes HTTP/1.1" 201 7097
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8081
+DEBUG:urllib3.connectionpool:http://localhost:8081 "GET /memes/ HTTP/1.1" 404 3684
+INFO:root:FirstPostTest
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8081
+DEBUG:urllib3.connectionpool:http://localhost:8081 "POST /memes HTTP/1.1" 201 11
+INFO:root:GetOnEmptyDbTest
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8081
+DEBUG:urllib3.connectionpool:http://localhost:8081 "GET /memes HTTP/1.1" 201 7243
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8081
+DEBUG:urllib3.connectionpool:http://localhost:8081 "GET /memes/ HTTP/1.1" 404 3684
+INFO:root:FirstPostTest
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8081
+DEBUG:urllib3.connectionpool:http://localhost:8081 "POST /memes HTTP/1.1" 201 11
