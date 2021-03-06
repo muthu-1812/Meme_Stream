@@ -1,20 +1,10 @@
 For Python 3.3 or newer, Commands for installing, creating and activate virtual environment has been changed.
 
-You can install virtual environment using pip:
-
-py -m pip install --user virtualenv
 For creating new environment:
 
 python3 -m venv env
 To activate your virtual environment:
 
-.\myproject\Scripts\activate
-After activating virtual environment, You’ll see “(myproject)” next to the command prompt.
-
-
-
-
-.\scripts\activate go into the folder and run this 
 X-meme is a proper environment
 env\Scripts\activate
 
